@@ -11,8 +11,16 @@ fn main() {
 	let args: Vec<String> = env::args().collect();
 
 	let mut i = 0;
-	for arg in args {
-		println!("args[{}] == {}", i, arg);
+	for arg in &args {
+		if arg == "-l" && (i + 1 <= args.len()) {
+			match args[i + 1].parse::<u32>() {
+				Ok(len) => {
+					println!("length: {}", len);
+				}
+				Err(_) => panic!("Please enter a valid length (u32)"),
+			};
+		}
+
 		i += 1;
 	}
 
@@ -20,9 +28,6 @@ fn main() {
 		"{}{}{}",
 		charset_alphabet_lower, charset_alphabet_upper, charset_numbers
 	);
-
-	let fart = random_character(gen_charset);
-	println!("{}", fart);
 }
 
 fn random_character(charset: String) -> char {
