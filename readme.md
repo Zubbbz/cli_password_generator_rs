@@ -5,8 +5,8 @@ This is a learning exercise for me.
 ## Features:
 
 - [x] Randomly generate a character from a charset
-- [ ] use arguments to specify:
-  - [ ] length
+- [x] use arguments to specify:
+  - [x] length
   - [ ] characters to include
     - [ ] Add a way to specify your own character set
     - [ ] Remove any duplicated characters
