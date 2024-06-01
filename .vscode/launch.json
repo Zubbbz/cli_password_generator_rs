@@ -21,7 +21,19 @@
 			},
 			"args": [
 				"-l",
-				"8",
+				"16",
+				//
+				"--lower",
+				"false",
+				//
+				"--upper",
+				"false",
+				//
+				"--numbers",
+				"false",
+				//
+				"--symbols",
+				"true",
 			],
 			"cwd": "${workspaceFolder}"
 		},
