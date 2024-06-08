@@ -5,12 +5,12 @@ use clap::Parser;
 use rand::Rng;
 
 struct Password {
-	length: u8,
+	length: u128,
 	charset: String,
 }
 
 impl Password {
-	pub fn new(length: Option<u8>, charset: String) -> Self {
+	pub fn new(length: Option<u128>, charset: String) -> Self {
 		match length {
 			Some(len) => Self {
 				length: len,
@@ -71,7 +71,7 @@ struct Args {
 	// ? Default values are done elsewhere, currently not using defaults for the args, as option type doesnt implement display...
 	/// Length of password
 	#[arg(short, long)]
-	length: Option<u8>,
+	length: Option<u128>,
 
 	/// Enable lowercase letters
 	#[arg(long)]
